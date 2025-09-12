@@ -1,7 +1,7 @@
 import { WebSocketServer, WebSocket } from "ws";
 
 const wss = new WebSocketServer({ port: 3002 });
- 
+
 interface User {
   socket: WebSocket;
   name: string;
@@ -17,7 +17,7 @@ let allSockets: User[] = [];
 let rooms: Room[] = [];
 
 wss.on("connection", (socket) => {
-  console.log("New client connected");
+  console.log("New client connected");~
 
   socket.on("message", (message) => {
     let parsedMessage: any;
@@ -46,7 +46,7 @@ wss.on("connection", (socket) => {
       console.log(`Room created: ${room}`);
     }
 
-    // JOIN ROOM
+    // JOIN ROuM
     if (parsedMessage.type === "join") {
       const { name, room } = parsedMessage.payload;
       let user = allSockets.find((u) => u.socket === socket);
@@ -64,7 +64,10 @@ wss.on("connection", (socket) => {
         targetRoom = { name: room, members: [] };
         rooms.push(targetRoom);
       }
-      targetRoom.members.push(user);
+
+      if (!targetRoom.members.find((m) => m.socket === socket)) {
+        targetRoom.members.push(user);
+      }
 
       console.log(`${name} joined room ${room}`);
 
@@ -88,10 +91,7 @@ wss.on("connection", (socket) => {
           payload: {
              name: currentUser.name,
              message: parsedMessage.payload.message,
-            room: currentUser.room,
           },
-           
-          
         }));
       }
     }
@@ -108,7 +108,7 @@ wss.on("connection", (socket) => {
           if (room.members.length === 0) {
             // auto delete empty rooms
             rooms = rooms.filter((r) => r.name !== room.name);
-            console.log(`🗑️ Room deleted: ${room.name}`);
+            console.log(`Room deleted: ${room.name}`);
           }
         }
       }
