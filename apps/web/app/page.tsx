@@ -1,41 +1,18 @@
-"use client"
-import { TextInput } from "@repo/ui/text-input";
+"use client";
 import { useRouter } from "next/navigation";
-import { useRef, useState,} from "react";
+import { SparklesPreview } from "./components/sparklespreview";
+import { Button } from "./components/button";
 
 export default function Home() {
-  const [value, setValue] = useState("");
-  const ref = useRef<HTMLInputElement>(null);
   const router = useRouter()
   return (
-    <div style={{
-      height: "100vh",
-      width: "100vw",
-      background: "black",
-      color: "white",
-      display: "flex",
-      justifyContent: "center",
-      justifyItems: "center",
-      fontSize: "2rem"
-    }}>
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        gap: "2rem"
-      }}>
-        
-        <TextInput 
-         ref={ref}
-         value={value} 
-         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setValue(e.target.value);
-            console.log(ref.current?.value);
-          }} type="text" placeholder="Enter text here" variant="small"/>
-        <button onClick={() =>
-          router.push(`/room/${value}`)
-        }>Join Room</button>
-      </div>
+    <div className="top-0 left-0 bg-black h-screen w-full flex items-center ">
+      <div className="w-full px-4 py-16 flex flex-col items-center justify-center mb-30 ">
+        <SparklesPreview />
+        <div className="mt-30 flex flex-col items-center space-y-6">
+          <Button />
+        </div>
+     </div>
     </div>
-  );
+   );
 }
