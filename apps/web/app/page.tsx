@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { SparklesPreview } from "./components/sparklespreview";
 import { Button } from "./components/button";
 
+
 export default function Home() {
   const router = useRouter()
   return (
