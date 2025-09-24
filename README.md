@@ -28,22 +28,6 @@ A real-time chat application built with Next.js and WebSockets, featuring room-b
 * Node.js – Server runtime
 * ws – WebSocket server for real-time communication
 
-## 📂 Project Structure
-.
-├── components/
-│   ├── ui/              # Shared UI components (hover card, buttons, inputs)
-│   ├── ChatRoom.tsx     # Room chat UI
-│   ├── CardHoverEffect.tsx
-│   └── Navbar, Sidebar, etc.
-├── hooks/
-│   └── useWebSocket.ts  # WebSocket client hook
-├── app/
-│   ├── page.tsx         # Homepage with create/join room cards
-│   └── room/[room]/     # Dynamic room route
-├── ws-server/
-│   └── index.ts         # WebSocket server logic
-└── README.md
-
 ## ⚡ Getting Started
 **1. Clone Repo**
 git clone https://github.com/your-username/chat-app.git
