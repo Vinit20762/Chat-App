@@ -1,68 +1,34 @@
-#Chat-Z 💬
-
+## Chat-Z 💬
 A real-time chat application built with Next.js and WebSockets, featuring room-based communication, hover-effect UI cards, and smooth navigation.
 
-This project allows users to:
+## This project allows users to:
+* Create or join chat rooms
+* Send and receive messages in real-time
+* Experience an interactive UI with hover effects
+* Manage multiple chat rooms seamlessly
 
-Create or join chat rooms
+## 🚀 Features
+* Room System: Users can create or join chat rooms with a unique room name.
+* Real-time Messaging: Messages update instantly using WebSocket connections.
+* Interactive UI: Beautiful card hover effects and responsive design.
+* User Experience:
+  * Name and room entry before joining
+  * Clear distinction between own messages and others
+* Scalable WebSocket Server: Manages multiple users and rooms.
 
-Send and receive messages in real-time
+## 🛠️ Tech Stack
+**Frontend**
+* Next.js 14 – App Router based frontend
+* React – Component-based UI
+* Tailwind CSS – Styling and responsive layout
+* Framer Motion – Smooth hover animations
+* shadcn/ui – UI components
 
-Experience an interactive UI with hover effects
+**Backend**
+* Node.js – Server runtime
+* ws – WebSocket server for real-time communication
 
-Manage multiple chat rooms seamlessly
-
-🚀 Features
-
-Room System: Users can create or join chat rooms with a unique room name.
-
-Real-time Messaging: Messages update instantly using WebSocket connections.
-
-Interactive UI: Beautiful card hover effects and responsive design.
-
-User Experience:
-
-Name and room entry before joining
-
-Clear distinction between own messages and others
-
-Scalable WebSocket Server: Manages multiple users and rooms.
-
-🛠️ Tech Stack
-Frontend
-
-Next.js 14
- – App Router based frontend
-
-React
- – Component-based UI
-
-Tailwind CSS
- – Styling and responsive layout
-
-Framer Motion
- – Smooth hover animations
-
-shadcn/ui
- – UI components
-
-Backend
-
-Node.js
- – Server runtime
-
-ws
- – WebSocket server for real-time communication
-
-Other
-
-TypeScript – Type safety
-
-Vercel – Deployment (Frontend)
-
-Local/Cloud hosting for WebSocket server
-
-📂 Project Structure
+## 📂 Project Structure
 .
 ├── components/
 │   ├── ui/              # Shared UI components (hover card, buttons, inputs)
@@ -78,24 +44,22 @@ Local/Cloud hosting for WebSocket server
 │   └── index.ts         # WebSocket server logic
 └── README.md
 
-⚡ Getting Started
-1. Clone Repo
+## ⚡ Getting Started
+**1. Clone Repo**
 git clone https://github.com/your-username/chat-app.git
 cd chat-app
 
-2. Install Dependencies
+**2. Install Dependencies**
 npm install
 
-3. Run WebSocket Server
+**3. Run WebSocket Server**
 cd ws-server
 ts-node index.ts
 
-
 This starts the WebSocket server at ws://localhost:3002.
 
-4. Run Next.js Frontend
+**4. Run Next.js Frontend**
 npm run dev
-
 
 Frontend runs at http://localhost:3000.
 
